@@ -1,14 +1,17 @@
 import { Button } from '@/components/ui/button';
 import { Progress } from '@/components/ui/progress';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { ScanLine, X, Settings } from 'lucide-react';
 interface ScanControlsProps {
   isScanning: boolean;
   onScan: () => void;
   onStop: () => void;
+  onSettingsOpen: () => void;
   progress: number;
   deviceCount: number;
+  settings: { subnets: string[]; timeoutMs: number };
 }
-export function ScanControls({ isScanning, onScan, onStop, progress, deviceCount }: ScanControlsProps) {
+export function ScanControls({ isScanning, onScan, onStop, onSettingsOpen, progress, deviceCount, settings }: ScanControlsProps) {
   return (
     <div className="w-full max-w-2xl mx-auto space-y-4">
       <div className="flex flex-col sm:flex-row items-center gap-4">
@@ -32,11 +35,19 @@ export function ScanControls({ isScanning, onScan, onStop, progress, deviceCount
             Stop Scan
           </Button>
         )}
-        {/* Placeholder for settings button */}
-        <Button variant="outline" size="lg" className="w-full sm:w-auto" disabled>
-          <Settings className="mr-2 h-5 w-5" />
-          Settings
-        </Button>
+        <TooltipProvider>
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <Button variant="outline" size="lg" className="w-full sm:w-auto" onClick={onSettingsOpen}>
+                <Settings className="mr-2 h-5 w-5" />
+                Settings
+              </Button>
+            </TooltipTrigger>
+            <TooltipContent>
+              <p>Scanning {settings.subnets.length} subnets with a {settings.timeoutMs}ms timeout.</p>
+            </TooltipContent>
+          </Tooltip>
+        </TooltipProvider>
       </div>
       {isScanning && (
         <div className="space-y-2 text-center animate-fade-in">
