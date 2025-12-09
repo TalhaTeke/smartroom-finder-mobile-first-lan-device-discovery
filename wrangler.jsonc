@@ -4,7 +4,7 @@
  */
  {
 	"$schema": "node_modules/wrangler/config-schema.json",
-	"name": "vite-reference",
+	"name": "smartroom-finder-fdyxxmiwz5r6no1-xyik_",
 	"main": "worker/index.ts",
 	"compatibility_date": "2025-04-24",
 	"assets": {
