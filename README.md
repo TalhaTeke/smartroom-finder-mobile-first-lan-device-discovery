@@ -2,7 +2,7 @@
 
 SmartRoom Finder is a mobile-first Progressive Web App (PWA) that discovers devices named "SmartRoomHub" on the user's local network (LAN) and enables seamless connectivity. Built with a focus on visual excellence and intuitive interactions, it uses client-side scanning techniques to detect devices via IP-range probing, HTTP checks, and fallback methods, displaying results in a clean, responsive interface. Users can connect to discovered devices with simple connectivity tests, receiving clear success or error feedback.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/TalhaTeke/smartroom-finder-mobile-first-lan-device-discovery)
 
 ## Features
 
@@ -145,7 +145,7 @@ Deploy to Cloudflare Workers for global edge delivery and PWA hosting.
    - The build includes manifest and service worker for PWA features.
    - Users can "Add to Home Screen" on mobile.
 
-[cloudflarebutton]
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/TalhaTeke/smartroom-finder-mobile-first-lan-device-discovery)
 
 ### CI/CD
 
